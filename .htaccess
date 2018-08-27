@@ -1,0 +1,12 @@
+RewriteEngine On
+AuthType Basic
+AuthName 'Press Ctrl + F5 to refresh cache'
+AuthUserFile /var/www/onlysites/data/www/test.onlysites.ru/.htpasswd
+Require valid-user
+DirectoryIndex index.htm index.html index.php /_h5ai/server/php/index.php
+Order allow,deny
+Allow from all
+Deny from 78.110.60.230
+Deny from 217.23.
+SetEnvIfNoCase User-Agent ".*MegaIndex" badbingbot
+Deny from env=badbingbot
